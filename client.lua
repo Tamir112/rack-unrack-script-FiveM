@@ -62,6 +62,9 @@ RegisterCommand('unrack', function ()
 
   local ped = GetPlayerPed(-1)
   if IsPedInAnyVehicle(ped, true) then
+    local car = GetVehiclePedIsIn(ped, false)
+    local t = GetVehicleClass(car)
+  if t == 18 then
   if doeshaverifle == false then
       
       ExecuteCommand('me unracks '..config.weapon1name..'')
@@ -79,12 +82,19 @@ else do
 
 end
   end
+else do ShowNotification("~r~This is not a police car")  end
+
+
+end
 end)
 
 RegisterCommand('rack', function ()
 
   local ped = GetPlayerPed(-1)
   if IsPedInAnyVehicle(ped, true) then
+    local car = GetVehiclePedIsIn(ped, false)
+    local t = GetVehicleClass(car)
+  if t == 18 then
     if doeshaverifle == true then
 
    
@@ -105,6 +115,10 @@ RegisterCommand('rack', function ()
   end
 
   end
+else do ShowNotification("~r~This is not a police car")  end
+
+
+end
     
 end)
 
@@ -114,6 +128,9 @@ RegisterCommand('unrack1', function ()
 
   local ped = GetPlayerPed(-1)
   if IsPedInAnyVehicle(ped, true) then
+    local car = GetVehiclePedIsIn(ped, false)
+    local t = GetVehicleClass(car)
+  if t == 18 then
   if doeshaveshotguh == false then
       
       ExecuteCommand('me unracks '..config.weapon2name..' shotgun')
@@ -128,15 +145,24 @@ RegisterCommand('unrack1', function ()
 end
 else do
   ShowNotification("~r~ You are not in a vehicle")
+end
+end
+
+else do ShowNotification("~r~This is not a police car")  end
+
 
 end
-  end
+
+  
 end)
 
 RegisterCommand('rack1', function ()
 
   local ped = GetPlayerPed(-1)
   if IsPedInAnyVehicle(ped, true) then
+    local car = GetVehiclePedIsIn(ped, false)
+    local t = GetVehicleClass(car)
+  if t == 18 then
     if doeshaveshotguh == true then
 
       ExecuteCommand('me racks '..config.weapon2name..'')
@@ -150,11 +176,15 @@ RegisterCommand('rack1', function ()
       end
   end
   else do
-    ShowNotification("~r~ You are not in a vehicle")
+    ShowNotification("~r~You are not in a vehicle")
 
   end
 
   end
+else do ShowNotification("~r~This is not a police car")  end
+
+
+end
     
 end)
 
